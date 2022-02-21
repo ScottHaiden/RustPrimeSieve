@@ -2,8 +2,8 @@ use std::io::Write;
 
 fn is_prime(i: u32, primes: &Vec<u32>) -> bool {
     let limit = (i as f64).sqrt() as u32;
-    for prime in primes {
-        if prime > &limit { break; }
+    for &prime in primes {
+        if prime > limit { break; }
         if i % prime == 0 { return false; }
     }
     return true;

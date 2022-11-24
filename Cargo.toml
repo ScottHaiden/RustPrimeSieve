@@ -5,4 +5,14 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[[bin]]
+name = "prime_sieve"
+path = "src/main.rs"
+
+[[bin]]
+name = "multipler"
+path = "src/multiplier.rs"
+
 [dependencies]
+rust-gmp = "0.5.0"
+socketpair = "0.17.0"

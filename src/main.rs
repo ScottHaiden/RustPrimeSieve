@@ -1,4 +1,5 @@
 use std::io::Write;
+use std::io::BufWriter;
 
 fn is_prime(i: u32, primes: &Vec<u32>) -> bool {
     let limit = (i as f64).sqrt() as u32;
@@ -19,7 +20,8 @@ fn print_progress(i: u32, found: u32) {
 }
 
 fn main() {
-    let mut stdout = std::io::stdout();
+    let stdout = std::io::stdout();
+    let mut out = BufWriter::new(stdout);
 
     let max = u32::MAX;
     let max_track = (max as f64).sqrt() as u32;
@@ -33,7 +35,7 @@ fn main() {
 
         found += 1;
         let bytes = i.to_be_bytes();
-        stdout.write_all(&bytes).expect("write failed");
+        out.write_all(&bytes).expect("write failed");
 
         if i > max_track { continue; }
         primes.push(i);

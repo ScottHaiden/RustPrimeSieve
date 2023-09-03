@@ -13,6 +13,10 @@ path = "src/main.rs"
 name = "multipler"
 path = "src/multiplier.rs"
 
+[[bin]]
+name = "printer"
+path = "src/printer.rs"
+
 [dependencies]
 rust-gmp = "0.5.0"
 socketpair = "0.17.0"
